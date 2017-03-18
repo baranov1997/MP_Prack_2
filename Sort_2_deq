@@ -1,0 +1,76 @@
+import java.util.Deque;
+import java.util.LinkedList;
+
+public class Tarelka {
+	 public static void main(String...args){     
+		 
+		    Deque deque1 = new LinkedList();
+			Deque deque2 = new LinkedList();
+			
+			//String[] s = new String[3];
+			deque1.add("Vasya");
+			deque1.add("Алеша");
+			deque1.add("Vasya");
+			deque1.add("vasya");
+			deque1.add("Sonya");
+			deque1.add("Sidor");
+			deque1.add("Vasya");
+			deque1.add("Petya");
+			deque1.add("Pifagor");
+			deque1.add("Vasya");
+			deque1.add("vasya");
+			deque1.add("Vasya");
+			deque1.add("ASD");
+			
+			
+			String fe,se;
+			int n,tp;
+			
+			n=13;//n=5/d=4
+			
+		while(n!=0){
+			
+			n=12; //n=d
+				
+			while(deque1.size()!=0){
+				fe=(String) deque1.getFirst();
+				deque1.removeFirst();
+				
+				if(deque1.size()!=0){
+				se = (String) deque1.getFirst();
+				} else{deque2.add(fe); break;}
+				
+				tp=fe.compareTo(se);
+			
+				if(tp>0){ 
+					deque1.addLast(fe);
+				} else{deque2.add(fe);}
+			}
+			
+			while(deque2.size()!=0){
+				
+				fe=(String) deque2.getFirst();
+				deque2.removeFirst();
+				
+				if(deque2.size()!=0){
+				se = (String) deque2.getFirst();
+				} else{deque1.add(fe); break;}
+			
+				tp=fe.compareTo(se);
+				
+				if(tp>0){ 
+					deque2.addLast(fe);
+					n=12; //n=d
+				} else{n-=1; deque1.add(fe);}
+				
+			}
+			
+		}
+			
+			while(deque1.size()>0){
+				System.out.println(deque1.poll());
+			}
+			
+	   }
+}
+
