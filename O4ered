@@ -1,0 +1,53 @@
+import java.util.ArrayList;
+
+public class St_Go {
+
+	public static void main(String[] args) {
+		
+		class Stack {
+			
+			//ArrayList <Integer> list = new ArrayList <Integer>();
+			
+		    private int mSize;
+		    private int[] stackArray;
+		    private int top;
+		    
+		    private ArrayList <Integer> list;
+		 
+		    public Stack() {
+		    	list = new ArrayList <Integer>();
+		        top = -1;
+		    }
+		 
+		    public void addElement(int element) {
+		    	list.add(element);
+		    	++top;
+		    }
+		 
+		    public int deleteElement() {
+		        return list.remove(top--);
+		    }
+		 
+		    public int readTop() {
+		        return list.get(top);
+		 
+		    }
+		 
+		    public boolean isEmpty() {
+		        return (top == -1);
+		    }
+		}
+		
+		Stack mStack = new Stack();
+		mStack.addElement(79);
+        mStack.addElement(59);
+        mStack.addElement(35);
+        mStack.addElement(24);
+        
+ 
+        while(!mStack.isEmpty()){
+        	int peremen = mStack.deleteElement();
+        	System.out.print(peremen+" ");
+        }
+    }
+}
