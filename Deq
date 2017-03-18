@@ -1,0 +1,53 @@
+import java.util.ArrayList;
+
+public class Deq_Go {
+
+	public static void main(String[] args) {
+		
+		class Dequeue {
+			
+	         ArrayList <Integer> list;
+	         
+	         Dequeue() {
+	        	 list = new ArrayList <Integer>();
+	         }
+	         
+	         public void addFirst(int element) {
+			    	list.add(0,element);
+			    }
+	       
+	         public void addLast(int element) {
+			    	list.add(element);
+			    }
+	         
+	         public int extractFirst() {
+	        	 int res = list.get(0);
+	        	 list.remove(0);
+			        return res;
+			    }
+	         
+	         public int extractLast() {
+	        	 int res = list.get(list.size()-1);
+	        	 list.remove(list.size()-1);
+			        return res;
+			    }
+	         
+	         boolean isEmpty() {
+	             return (list.size() == 0);
+	         }
+      }
+				Dequeue mQueue = new Dequeue();
+		
+				mQueue.addFirst(45);
+				mQueue.addLast(2);
+				mQueue.addLast(346);
+				mQueue.addFirst(0);
+		
+				while(!mQueue.isEmpty()){
+					int peremen = mQueue.extractFirst();
+					System.out.print(peremen+" ");
+				}
+
+	}
+
+}
