@@ -1,0 +1,46 @@
+import java.util.ArrayList;
+
+public class O4_Go {
+
+	public static void main(String[] args) {
+		
+		class Queue {
+			
+			         ArrayList <Integer> list;
+			         
+			         Queue() {
+			        	 list = new ArrayList <Integer>();
+			         }
+			       
+			         public void add(int element) {
+					    	list.add(element);
+					    }
+			         
+			         public int extract() {
+			        	 int res = list.get(0);
+			        	 list.remove(0);
+					        return res;
+					    }
+			         
+			         
+			         boolean isEmpty() {
+			             return (list.size() == 0);
+			         }
+		    }
+		
+					Queue mQueue = new Queue();
+					
+					mQueue.add(45);
+					mQueue.add(2);
+					mQueue.add(346);
+					mQueue.add(0);
+					
+					while(!mQueue.isEmpty()){
+			        	int peremen = mQueue.extract();
+			        	System.out.print(peremen+" ");
+			        }
+					
+
+	}
+
+}
